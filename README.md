@@ -13,14 +13,14 @@
 ### Introducción al streaming (local)
 - Ejecutar la clase	*EasySparkStreaming* para un sistema de ficheros local  
 `spark-submit --class com.lambdooop.training_bd_rt.streaming.EasySparkStreaming$run target/training-bd-rt-0.1.0-SNAPSHOT.jar`
-- Levantar netcat en el puerto 9999  
+- Levantar netcat en el puerto 9999   
 `nc -lk 9999`
 - Ver la salida por consola   
 
 ### Introducción al streaming (HDFS)
 - Ejecutar la clase	*EasyHDFSSparkStreaming* para HDFS  
 `spark-submit --class com.lambdooop.training_bd_rt.streaming.EasyHDFSSparkStreaming$run target/training-bd-rt-0.1.0-SNAPSHOT.jar`
-- Levantar netcat en el puerto 9999
+- Levantar netcat en el puerto 9999  
 `nc -lk 9999`
 - Ver la salida por consola 	 
 	 
