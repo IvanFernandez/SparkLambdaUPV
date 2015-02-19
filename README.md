@@ -25,36 +25,36 @@
 - Ver la salida por consola 	 
 	 
 ### Arquitectura Lambda
-El proyecto consiste en hacer una Lambda donde:
+El proyecto consiste en hacer una Lambda tipo 'Hello, Lambda!!' donde:
 - La parte batch ejecutará un map-reduce batch respecto de un fichero de entrada.
 - La parte streaming ejecutará un map-reduce streaming similar a la de la clase batch.
 - La serving layer consultará (son SparkSQL) el resultado de la Lambda.
 
 #### Setup
-- Crear los directorios necesarios para la práctica:
+Crear los directorios necesarios para la práctica:
 
-Para local en streaming:  
-mkdir -p /root/tmp/spark/input/streaming/  
-mkdir -p /root/tmp/spark/output/streaming/  
-mkdir -p /root/tmp/spark/output/streaming/init/  
-touch /root/tmp/spark/output/streaming/init/empty  
+Directorios para ejecutar la Lambda en un sistema de ficheros local (*batch*):  
+`mkdir -p /root/tmp/spark/input/batch/`    
+`mkdir -p /root/tmp/spark/output/batch/`    
 
+Directorios para ejecutar la Lambda en un sistema de ficheros local (*streaming*):  
+`mkdir -p /root/tmp/spark/input/streaming/`    
+`mkdir -p /root/tmp/spark/output/streaming/`  
+`mkdir -p /root/tmp/spark/output/streaming/init/`  
+`touch /root/tmp/spark/output/streaming/init/empty`  
 
-Para local en batch:  
-mkdir -p /root/tmp/spark/input/batch/  
-mkdir -p /root/tmp/spark/output/batch/  
-
-NOTA: Si no tenemos permisos en nuestro proyecto en los directorios que se nombran anteriormente se puede cambiar por otros directorios. En este caso habrá que modificar los atributos de la clase *src/main/java/com/lambdooop/training_bd_rt/utils/LambdaConstants.java*
+*NOTA*: Si no tenemos permisos en nuestro proyecto en los directorios que se nombran anteriormente se puede cambiar por otros directorios. En este caso habrá que modificar los atributos de la clase *LambdaConstants.java* dentro del paquete Utils.
 
 #### Guión
 - Descargar algunos ficheros de prueba del proyecto Gutenberg
-Navegar al directorio input (/root/tmp/spark/input/batch/) para batch y ejecutar:
-`wget -nd -r -l 10 -A.txt ftp://ftp.ibiblio.org/pub/docs/books/gutenberg/`
-NOTA: Dejarlo un rato (ojo son 37GB ...)
+Navegar al directorio input (/root/tmp/spark/input/batch/) para batch y ejecutar:  
+`wget -nd -r -l 10 -A.txt ftp://ftp.ibiblio.org/pub/docs/books/gutenberg/`  
 
-- Vamos a ejecutar el exporter en local para batch (clase ExporterLocalSparkBatch y ver instrucciones)  
-- Vamos a ejecutar la serving layer(clase SparkSQLLocal (ver instrucciones) y vamos a ver el resultado obtenido en el exporter batch.  
-- Vamos a ejecutar la clase ExporterLocalSparkStreaming (ver instrucciones) y vamos a ver como la serving layer se ha actualizado.  
-- Vamos a ejecutar la clase SparkSQLLocal (ver instrucciones) y vamos a ver como la serving layer se ha actualizado.  
+*NOTA*: Dejarlo un rato (ojo son 37GB ...)
 
-- Comprobar consola de Spark UI en localhost:4040/
+1) Vamos a ejecutar parte batch (ir a clase ExporterLocalSparkBatch y ver instrucciones).
+2) Vamos a ejecutar la serving layer(ir a clase SparkSQLLocal y ver instrucciones) y vamos a ver el resultado obtenido en el exporter batch.  
+3) Vamos a ejecutar la parte streaming (ir a la clase ExporterLocalSparkStreaming y ver instrucciones) y vamos a ver como la serving layer se ha actualizado.  
+4) Vamos a ejecutar la serving layer otra vez y vamos a ver como los resultados se han actualizado.  
+
+*Depurar Spark* : Comprobar consola de Spark UI en localhost:4040/
