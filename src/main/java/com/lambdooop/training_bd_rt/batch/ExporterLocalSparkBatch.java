@@ -28,7 +28,7 @@ import com.lambdooop.training_bd_rt.utils.LambdaConstants;
  *  - Run spark with the following command: 
  *  	spark-submit --class com.lambdooop.training_bd_rt.batch.ExporterLocalSparkBatch$run target/training-bd-rt-0.1.0-SNAPSHOT.jar
  * 
- *  Text files needs to be previously copied to LambdaConstants.getLocalBatchInputPath() (check if you have permissions)
+ *  Text files need to be previously copied to LambdaConstants.getLocalBatchInputPath() (check if you have permissions)
  *  Check LambdaConstants.getLocalBatchOutputPath() directory where output will be saved
  *  
  */

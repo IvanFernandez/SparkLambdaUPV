@@ -1,10 +1,11 @@
 # Prácticas Máster en Big Data
 # Universidad Politécnica de Valencia
 
-## Instrucciones de instalacción.
+## Instrucciones de instalacción
 
 - Descargar el proyecto  
-`git clone git@github.com:IvanFernandez/SparkLambdaUPV.git`
+`git clone https://github.com/IvanFernandez/SparkLambdaUPV.git`    
+Si no está git configurado bajar el código desde el botón 'Download ZIP' en el lado derecho.    
 - Navegar a la raíz del proyecto  
 `cd SparkLambdaUPV`
 - Ejecutar el siguiente comando  
@@ -43,7 +44,7 @@ Directorios para ejecutar la Lambda en un sistema de ficheros local (**streaming
 `mkdir -p /root/tmp/spark/output/streaming/init/`  
 `touch /root/tmp/spark/output/streaming/init/empty`  
 
-**NOTA**: Si no tenemos permisos en nuestro proyecto en los directorios que se nombran anteriormente se puede cambiar por otros directorios. En este caso habrá que modificar los atributos de la clase *LambdaConstants.java* dentro del paquete Utils.
+**NOTA**: Si no tenemos permisos en nuestro proyecto en los directorios que se nombran anteriormente, se puede cambiar por otros directorios. En este caso habrá que modificar los atributos de la clase *LambdaConstants.java* dentro del paquete Utils.
 
 #### Guión
 - Descargar algunos ficheros de prueba del proyecto Gutenberg
@@ -52,7 +53,7 @@ Navegar al directorio input (/root/tmp/spark/input/batch/) para batch y ejecutar
 
 **NOTA**: Dejarlo un rato (ojo son 37GB ...)
 
-__1)__ Vamos a ejecutar parte batch (ir a clase **ExporterLocalSparkBatch** y ver instrucciones).
+__1)__ Vamos a ejecutar parte batch (ir a clase **ExporterLocalSparkBatch** y ver instrucciones).  
 __2)__ Vamos a ejecutar la serving layer(ir a clase **SparkSQLLocal** y ver instrucciones) y vamos a ver el resultado obtenido en el exporter batch.  
 __3)__ Vamos a ejecutar la parte streaming (ir a la clase **ExporterLocalSparkStreaming** y ver instrucciones) y vamos a ver como la serving layer se ha actualizado.  
 __4)__ Vamos a ejecutar la serving layer otra vez y vamos a ver como los resultados se han actualizado.  
